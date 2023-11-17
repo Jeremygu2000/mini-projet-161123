@@ -167,3 +167,14 @@ body{
     color: #694D4D;
     border-radius: 10px;
   }
+
+  .card{
+    padding: 0!important;
+    margin: 0 !important;
+    background: black!important;
+    color: #694D4D;
+  }
+
+  .white{
+    background-color: white!important;
+  }

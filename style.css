@@ -168,13 +168,19 @@ body{
     border-radius: 10px;
   }
 
-  .card{
+  .card-body{
     padding: 0!important;
     margin: 0 !important;
     background: black!important;
     color: #694D4D;
+    /* width: 460px!important; */
   }
 
   .white{
     background-color: white!important;
   }
+
+a{
+  text-decoration: none!important;
+  
+}

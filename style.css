@@ -184,3 +184,41 @@ a{
   text-decoration: none!important;
   
 }
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.photo {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo:hover {
+  transform: scale(1.1);
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+.block-paragraph {
+  background-color: #625c5c;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 600px;
+}

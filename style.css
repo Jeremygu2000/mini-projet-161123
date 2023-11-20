@@ -4,6 +4,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #61494987!important;
 }
 
 #wrapper{
@@ -221,4 +222,5 @@ a{
   border-radius: 8px;
   margin: 20px auto;
   max-width: 600px;
+  font-family: serif;
 }

@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #61494987!important;
+}
+
+#wrapper{
+    position: relative;
+    height: 100vh;
+}
+
+.img{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+#slider-area{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#slider-area:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0);
+}
+
+#slider-area .owl-item div{
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}   
+
+#slider-area .owl-item div img{
+    display: none;
+}
+
+.news {
+    position: relative;
+  }
+  
+  .news i {
+    color: #D48FE3;
+    text-transform: capitalize;
+    font-size: 18px;
+  }
+  
+  .news label {
+    margin-top: 12px;
+    margin-right: 20px;
+  }
+  
+  .news .left {
+    padding: 30px 0;
+    width: 65%;
+  }
+  
+  .news .right {
+    width: 35%;
+  }
+  
+  .news img {
+    width: 100%;
+  }
+  
+  .news .items p {
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .news .box {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 40px 0;
+  }
+  
+  .news .box:nth-child(1) {
+    padding-top: 0;
+  }
+  
+  .news .box:nth-last-child(1) {
+    border-bottom: none;
+  }
+  
+  .news .box img {
+    width: 110px;
+    height: 114px;
+  }
+  
+  .news .stext {
+    padding: 0 0 0 20px;
+  }
+
+  .left, .right {
+    width: 50%;
+    padding: 30px;
+  }
+  
+  .top {
+    margin-top: 80px;
+  }
+  
+  .mtop {
+    margin-top: 40px;
+  }
+  
+  .heading h1 {
+    font-size: 100px;
+    font-weight: 500;
+    opacity: 0.1;
+    font-family: serif;
+    position: absolute;
+    top: -30px;
+  }
+  
+  .heading h2 {
+    margin: 30px 0;
+    font-size: 45px;
+    font-family: serif;
+    font-weight: 400;
+  }
+  
+  .about .heading h1 {
+    top: 55px;
+  }
+  
+  .about {
+    position: relative;
+  }
+  
+  .about .left {
+    margin-top: 30px;
+  }
+  
+  .about p {
+    font-size: 15px;
+  }
+  
+  .about button {
+    margin: 30px 0;
+  }
+
+  .container {
+    max-width: 85%;
+    margin: auto;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .primary-btn {
+    padding: 15px 40px;
+    background: black;
+    font-weight: bold;
+    color: #694D4D;
+    border-radius: 10px;
+  }
+
+  .card-body{
+    padding: 0!important;
+    margin: 0 !important;
+    background: black!important;
+    color: #694D4D;
+    /* width: 460px!important; */
+  }
+
+  .white{
+    background-color: white!important;
+  }
+
+a{
+  text-decoration: none!important;
+  
+}
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.photo {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo:hover {
+  transform: scale(1.1);
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+.block-paragraph {
+  background-color: #625c5c;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 600px;
+  font-family: serif;
+}

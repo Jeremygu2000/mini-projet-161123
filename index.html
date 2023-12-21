@@ -13,7 +13,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <title>Coffee Shop</title>
+  <!-- fichier jevine les liens -->
+  <link rel="stylesheet" href="j.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <title>Coffee Shop</title>
 </head>
 <body>
     <!-- nav bar bootstrap -->
@@ -221,19 +229,6 @@
     <!-- end menu  -->
     <!-- footer  -->
     <div class="boitre">
-        <div class="subscribe">
-          <p>SUBSCRIBE</p>
-          <input
-            placeholder="Your e-mail"
-            class="subscribe-input"
-            name="email"
-            type="email"
-          />
-          <br />
-          <div class="submit-btn">SUBMIT</div>
-        </div>
-      </div>
-      <br />
       <div class="center-items">
       <div class="cardo" id="contact">
         <a href="#" class="socialContainer containerOne">
@@ -269,26 +264,66 @@
         </a>
       </div>
       </div>  
-    <footer>
-      <div class="colorback">
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#wrapper">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#menu1">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#story">Effect</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#contact">Contact Us</a>
-          </li>
-        </ul>
+    <footer class="topbob">
+      <div class="container01">
+        <h1>Connect With Us</h1>
+        <p>
+          We would like to respond to your queries and assist you. Feel free to
+          get in touch with us.
+        </p>
+        <div class="contact-box1">
+          <div class="contact-left1">
+            <h3>Send Your Message</h3>
+            <form>
+              <div class="input-row1">
+                <div class="input-group1">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" placeholder="Enter your name" />
+                </div>
+                <div class="input-group1">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" placeholder="Enter your email" />
+                </div>
+              </div>
+              <div class="input-row1">
+                <div class="input-group1">
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" placeholder="+230" />
+                </div>
+                <div class="input-group1">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" placeholder="Product Demo" />
+                </div>
+              </div>
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit">SEND</button>
+            </form>
+          </div>
+          <div class="contact-right1">
+            <h3>Reach us</h3>
+            <table>
+              <tr>
+                <td>Email:</td>
+                <td>@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Phone:</td>
+                <td>+230</td>
+              </tr>
+              <tr>
+                <td>Address:</td>
+                <td>Port Louis</td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
+   
     </footer>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

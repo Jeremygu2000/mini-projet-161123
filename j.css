@@ -4,24 +4,29 @@ STYLE.CSS
     margin: 0;
     padding: 0;
 }
+.topbob{
+ position: static;
+ width: 100%;
+}
 body {
     background: #535353;
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
 }
-.container {
+.container01 {
     width: 80%;
-    margin: 50% auto;
+    margin: auto;
+
 }
-.contact-box {
+.contact-box1 {
     background: #fff;
     display: flex;
 }
-.contact-left {
+.contact-left1 {
     flex-basis: 60%;
     padding: 40px 60px;
 }
-.contact-right {
+.contact-right1 {
     flex-basis: 40%;
     padding: 40px;
     background-color: #ACACAC;
@@ -30,15 +35,15 @@ body {
 h1 {
     margin-bottom: 10px;
 }
-.container p {
+.container01 p {
     margin-bottom: 40px;
 }
-.input-row {
+.input-row1 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
-.input-row .input-group {
+.input-row1 .input-group {
     flex-basis: 48%;
 }
 input {
@@ -60,7 +65,7 @@ label {
     display: block;
     color: #000000;
 }
-button {
+.button1 {
     background: #434343;
     width: 100px;
     border: none;
@@ -71,12 +76,12 @@ button {
     margin-top: 20px;
     box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
 }
-.contact-left h3 {
+.contact-left1 h3 {
     color: #1C00B5;
     font-weight: 600;
     margin-bottom: 30px;
 }
-.contact-right h3 {
+.contact-right1 h3 {
     font-weight: 600;
     margin-bottom: 30px;
 }

@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Reservation System</title>
+    <style>
+        body {
+            font-family: 'Copperplate', sans-serif;
+            text-align: center;
+            background-image: url('https://images.pexels.com/photos/531829/pexels-photo-531829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); alt : 'coffee cups';
+            background-size: cover;
+            background-position: center;
+            color: black; /* Set text color to be visible against the background */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #8B4513; /* Coffee brown color */
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #A0522D; /* Darker shade on hover */
+        }
+
+        @media (min-width: 600px) {
+            body {
+                max-width: 600px;
+                margin: auto;
+            }
+        }
+
+        /* Contact Us Form Styles */
+        #contactForm {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        #reservationDetails {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Coffee Shop Reservation System</h1>
+
+    <label for="tableNumber">Table Number:</label>
+    <input type="number" id="tableNumber" placeholder="Enter table number">
+
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" placeholder="Enter customer name">
+
+    <label for="reservationTime">Reservation Time (10 to 17):</label>
+    <input type="number" id="reservationTime" placeholder="Enter reservation time">
+
+    <label for="contactName">Contact Name:</label>
+    <input type="text" id="contactName" placeholder="Your name">
+
+    <label for="contactEmail">Contact Email:</label>
+    <input type="email" id="contactEmail" placeholder="Your email">
+
+    <label for="contactNumber">Contact Number (9 digits):</label>
+    <input type="tel" id="contactNumber" placeholder="Your contact number">
+
+    <button onclick="displayAvailableTables()">Display Available Tables</button>
+    <button onclick="makeReservation()">Make Reservation</button>
+
+    <!-- Contact Us Form -->
+    <div id="contactForm">
+        <h2>Contact Us</h2>
+        <form action="#" method="post" onsubmit="return validateContactForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message"></textarea>
+
+            <label for="contactNumberForm">Contact Number (9 digits):</label>
+            <input type="tel" id="contactNumberForm" name="contactNumber" placeholder="Your contact number" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Reservation Details -->
+    <div id="reservationDetails">
+        <h2>Reservation Details</h2>
+        <p id="reservationInfo"></p>
+    </div>
+
+    <p class="error-message" id="errorMessage"></p>
+
+    <script>
+        const MAX_TABLES = 10;
+
+        function displayAvailableTables() {
+            let availableTables = "Available Tables: ";
+            for (let i = 1; i <= MAX_TABLES; i++) {
+                availableTables += `${i} `;
+            }
+            alert(availableTables);
+        }
+
+        function makeReservation() {
+            // Clear previous error messages
+            document.getElementById("errorMessage").innerText = "";
+            
+            const tableNumber = document.getElementById("tableNumber").value;
+            const customerName = document.getElementById("customerName").value;
+            const reservationTime = document.getElementById("reservationTime").value;
+            const contactName = document.getElementById("contactName").value;
+            const contactEmail = document.getElementById("contactEmail").value;
+            const contactNumber = document.getElementById("contactNumber").value;
+
+            // Validate reservation details
+            if (!tableNumber || !customerName || !reservationTime || !contactName || !contactEmail || !contactNumber) {
+                displayError("Please fill in all details.");
+                return;
+            }
+
+            // Validate reservation time
+            if (reservationTime < 10 || reservationTime > 17) {
+                displayError("Reservation time must be between 10 and 17.");
+                return;
+            }
+
+            // Validate email format
+            if (!validateEmail(contactEmail)) {
+                displayError("Invalid email address.");
+                return;
+            }
+
+            // Validate contact number format
+            if (!validateContactNumber(contactNumber)) {
+                displayError("Invalid contact number format. Please enter 9 digits.");
+                return;
+            }
+
+            // Validate table number
+            if (tableNumber > MAX_TABLES) {
+                displayError("Table number is already booked. Please choose another.");
+                return;
+            }
+
+            // Assuming successful reservation, show details
+            const reservationInfo = `Table Number: ${tableNumber}\nCustomer Name: ${customerName}\nReservation Time: ${reservationTime}\nContact Name: ${contactName}\nContact Email: ${contactEmail}\nContact Number: ${contactNumber}`;
+            document.getElementById("reservationInfo").innerText = reservationInfo;
+            document.getElementById("reservationDetails").style.display = "block";
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validateContactNumber(contactNumber) {
+            const contactNumberRegex = /^\d{9}$/;
+            return contactNumberRegex.test(contactNumber);
+        }
+
+        function displayError(message) {
+            const errorMessageElement = document.getElementById("errorMessage");
+            errorMessageElement.innerText = message;
+            errorMessageElement.style.display = "block"; // Show the error message
+        }
+
+        function validateContactForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const contactNumber = document.getElementById("contactNumberForm").value;
+
+            if (!name || !email || !contactNumber) {
+                alert("Please fill in all contact details.");
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                alert("Invalid email address.");
+                return false;
+            }
+
+            if (!validateContactNumber(contactNumber)) {
+                alert("Invalid contact number format. Please enter 9 digits.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,4 +1,10 @@
 /* Agit sur la fenetre Subscrid */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Optional: Set a maximum width for larger screens */
+  margin: 0 auto; /* Center the container */
+}
+
 .boitre{
     display: flex;
     align-items: center;
